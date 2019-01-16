@@ -53,10 +53,56 @@
     <section>
         <h1>Conference Registration Form</h1>
         <p>Required Item (*)</p>
+        <!-- This starts out the form and tells the form where to process it to -->
+        <form action="http://www.example.com/cg/register" method="post">
+            <!-- Creates a datalkist where the user can choose an option -->
+            <label>Title</label>
+            <input name="title" id="titleBox" type="text" list="titleList">
+            <datalist id="titleList">
+                <option value="Mr."></option>
+                <option value="Mrs."></option>
+                <option value="Ms."></option>
+                <option value="Prof."></option>
+                <option value="Dr."></option>
+                <option value="Assist. Prof."></option>
+                <option value="Assoc. Prof."></option>
+                <option value=""></option>
+            </datalist>
+            <!-- the inputs with the attribute required is indicating that the user has to enter text in the field -->
+            <label>First Name*</label>
+            <input name="firstName" id="fnBox" type="text" required>
 
+            <label>Last Name*</label>
+            <input name="lastName" id="lnBox" type="text" required>
+            <label>Address*</label>
+            <input name="address" id="addBox" type="text" required>
+            <label>Company or University</label>
+            <input name="group" id="groupBox" type="text">
+            <label>E-mail*</label>
+            <input name="email" id="mailBox" type="text" required>
+            <!-- The two following patterns are telling the form that the user must input the data in a certain format -->
+            <label>Phone Number*</label>
+            <input name="phoneNumber" id="phoneBox" type="text" placeholder="(nnn) nnn-nnnn)" required pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$">
+            <label>ACGIP Membership Number</label>
+            <input name="" id="" type="text" placeholder=" acgip-nnnnnn" pattern="^acgip\-\d{6}$">
+            <!-- This creates a drop down menu with 5 different values giving the option and cost. The user can then select option they want -->
+            <label id="regList">Registration category </label>
+            <select name="" id="regList">
+                <option value="member">ACGIP Member ($695)</option>
+                <option value="nonmember">Non-Member ($795)</option>
+                <option value="student">Student ($310)</option>
+                <option value="poster">Poster ($95)</option>
+                <option value="guest">Guest ($35)</option>
+
+
+            </select>
+
+            <p>
+                <input type="submit" value="Continue">
+            </p>
+        </form>
     </section>
-    <form action="http://www.example.com/cg/register" method="post">
-    </form>
+
 
     <aside>
         <dl>

@@ -13,4 +13,29 @@
 
 
 /* Validation Styles */
+/* The following elements will be a beige color */
+input:focus,
+select:focus,
+textarea:focus {
+    background: rgb(245, 245, 140);
+}
 
+/* All input elements with corresponding ID's will change to a light green color when the field is selected on the users end and contains the correct data It also provides an image to indicate that its valid and is put to the right of the field and is set to not repeat*/
+input#fnBox:focus:valid,
+input#lnBox:focus:valid,
+input#addBox:focus:valid,
+input#mailBox:focus:valid,
+input#phoneBox:focus:valid,
+input#idBox:focus:valid {
+    background: rgb(220, 255, 220) url(cg_valid.png) no-repeat right;
+}
+
+/* All input elements with corresponding ID's will change to a light red color when the field is selected on the users end and does not contain the correct data. It also provides an image to indicate that its invalid and is put to the right of the field and is set to not repeat */
+input#fnBox:focus:invalid,
+input#lnBox:focus:invalid,
+input#addBox:focus:invalid,
+input#mailBox:focus:invalid,
+input#phoneBox:focus:invalid,
+input#idBox:focus:invalid {
+    background: rgb(255, 232, 232) url(cg_invalid.png) no-repeat right;
+}
